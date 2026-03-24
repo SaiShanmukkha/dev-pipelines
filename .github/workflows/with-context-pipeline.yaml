@@ -8,5 +8,5 @@ jobs:
         run: |
           echo "GitHub Context:"
           echo "${{ toJson(github) }}"
-          echo "Event Context:"
+          echo "Job Context:"
           echo "${{ toJson(job) }}"
