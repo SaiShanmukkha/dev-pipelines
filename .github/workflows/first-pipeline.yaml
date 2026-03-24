@@ -4,5 +4,5 @@ jobs:
     first-pipeline:
         runs-on: ubuntu-latest
         steps:
-            - name: check os-release
-              run: cat /etc/os-release
+            -   name: check os-release
+                run: cat /etc/os-release
