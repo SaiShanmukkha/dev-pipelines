@@ -1,0 +1,14 @@
+name: reg-var-pipeline
+on: workflow_dispatch
+jobs:
+  first-job:
+    runs-on: ubuntu-22.04
+    env:
+      FJ_Val: "First Job Variable"
+    steps:
+      - name: "Access ENV var from Repo"
+        run: |
+          echo 'Accessed Value: ${{ vars.REG_VAR }}'
+      - name: "Access Job Var"
+        run: |
+          echo "Accessed Value: $FJ_Val"
