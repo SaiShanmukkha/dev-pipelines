@@ -1,4 +1,4 @@
-name: npm-test-pipeline
+name: cicd-pipeline
 on: workflow_dispatch
 jobs:
     test-job:
