@@ -1,0 +1,8 @@
+name: test-first-pipeline
+on: workflow_dispatch
+jobs:
+    first-pipeline:
+        runs-on: ubuntu-latest
+        steps:
+            - name: check os-release
+              run: cat /etc/os-release
