@@ -1,0 +1,8 @@
+name: Multi-trigger
+on: [workflow_dispatch, push]
+jobs:
+    multi-trigger-job:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Run Job
+                run: echo "This job can be triggered by both workflow_dispatch and push events."
