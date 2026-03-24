@@ -1,0 +1,12 @@
+name: "my-github-actions-context-pipeline"
+on: workflow_dispatch
+jobs:
+  context-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print GitHub Context
+        run: |
+          echo "GitHub Context:"
+          echo "${{ toJson(github) }}"
+          echo "Event Context:"
+          echo "${{ toJson(job) }}"
