@@ -1,0 +1,26 @@
+{
+  "name": "pipelines",
+  "version": "1.0.0",
+  "description": "Dev pipelines",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaiShanmukkha/dev-pipelines.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaiShanmukkha/dev-pipelines/issues"
+  },
+  "homepage": "https://github.com/SaiShanmukkha/dev-pipelines#readme",
+  "dependencies": {
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "jest": "^30.3.0"
+  }
+}

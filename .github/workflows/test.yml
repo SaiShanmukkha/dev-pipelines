@@ -1,0 +1,18 @@
+name: test-pipeline
+on: workflow_dispatch
+jobs:
+    test-pipeline:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Get Code
+                uses: actions/checkout@v3
+            -   name: Install Node.js
+                uses: actions/setup-node@v3
+                with:
+                    node-version: '22'
+            -   name: install dependencies
+                run: npm ci
+            -   name: run tests
+                run: npm test
+    
+        
