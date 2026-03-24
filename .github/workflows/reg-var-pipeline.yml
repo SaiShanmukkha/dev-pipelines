@@ -3,6 +3,8 @@ on: workflow_dispatch
 jobs:
   first-job:
     runs-on: ubuntu-22.04
+    environment:
+      name: Dev
     env:
       FJ_Val: "First Job Variable"
     steps:
