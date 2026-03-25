@@ -1,0 +1,20 @@
+name: "Log Level Print Pipeline"
+run-name: Deploy with Log Level ${{inputs.logLevel}} by @${{github.actor}}
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+jobs:
+  deploy-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print deploy target
+        run: echo ${{inputs.logLevel}}
