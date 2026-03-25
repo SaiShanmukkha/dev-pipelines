@@ -1,0 +1,26 @@
+name: "Test Concurrency Runs"
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, dev]
+    paths: ['**']
+
+concurrency:
+  group: "ci-${{ github.actor }}-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  first-job:
+    timeout-minutes: 5
+    runs-on: ubuntu-24.04
+    steps:
+      - name: "First Job, First Step"
+        run: echo "First Job, First Step"
+      - name: "Get Server Info"
+        run: |
+          date
+          python3 --version
+          cat /etc/os-release
+          lscpu
+          free -m
+          sleep 10
