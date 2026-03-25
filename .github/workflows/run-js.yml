@@ -13,5 +13,7 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v4
+      - name: Get nodejs
+        uses: actions/setup-node@v6
       - name: Run the file
         run: node ./dist/main.js
