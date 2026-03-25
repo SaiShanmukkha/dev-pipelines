@@ -1,0 +1,17 @@
+name: Run JS
+run-name: Run By | ${{github.actor}}
+on:
+  push:
+    branches:
+      - main
+      - dev
+    paths:
+      - dist/**
+jobs:
+  run-file:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v4
+      - name: Run the file
+        run: node ./dist/main.js
