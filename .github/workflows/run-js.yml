@@ -16,4 +16,4 @@ jobs:
       - name: Get nodejs
         uses: actions/setup-node@v6
       - name: Run the file
-        run: node ./dist/main.js
+        run: node ./dist/main.js --a 10
