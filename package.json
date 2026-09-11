@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/SaiShanmukkha/dev-pipelines#readme",
   "dependencies": {
-    "zod": "^4.3.6"
+    "zod": "^4.3.6",
+    "log": "^6.3.2"
   },
   "devDependencies": {
     "jest": "^30.3.0"
