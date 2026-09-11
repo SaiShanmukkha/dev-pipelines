@@ -7,7 +7,7 @@ on:
       - "dev"
 jobs:
   init_job:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Get Code
         uses: actions/checkout@v7
@@ -19,7 +19,6 @@ jobs:
           node-version: 24
           package-manager-cache: false
           check_latest: false
-          architecture: 'x86'
       - name: Confirm node.js
         run: |
           echo "Node & NPM Version:"
