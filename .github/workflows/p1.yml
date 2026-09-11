@@ -6,7 +6,7 @@ on:
       - "main"
       - "dev"
     paths:
-      - ".github/*"
+      - ".github/**"
 jobs:
   init_job:
     runs-on: ubuntu-24.04
@@ -28,6 +28,7 @@ jobs:
           npm --version
     
   first_job:
+    needs: init_job
     runs-on: ubuntu-22.04
     steps:
       - name: check os
