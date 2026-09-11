@@ -1,0 +1,14 @@
+name: "p1"
+on:
+  workflow_dispatch: 
+  push:
+    branches: 
+      - "main"
+      - "dev"
+jobs:
+  first_job:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: check os
+        run: cat /etc/os-release
+  
