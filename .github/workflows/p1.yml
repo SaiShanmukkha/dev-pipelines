@@ -8,6 +8,11 @@ on:
     paths:
       - ".github/**"
 jobs:
+  github_context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: understand github context
+        run: echo ${{toJson(github)}}
   init_job:
     runs-on: ubuntu-24.04
     steps:
