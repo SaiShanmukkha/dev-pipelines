@@ -12,7 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: understand github context
-        run: echo ${{toJson(github)}}
+        run: |
+          echo '{"name":"test","version":1}' | jq .
+          echo "${{ toJson(github) }}"
   init_job:
     runs-on: ubuntu-24.04
     steps:
