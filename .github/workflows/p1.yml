@@ -11,4 +11,10 @@ jobs:
     steps:
       - name: check os
         run: cat /etc/os-release
+      - name: check cpu & memory
+        run: |
+          echo "CPU:"
+          w
+          echo "Memory:"
+          free -m
   
