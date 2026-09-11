@@ -16,7 +16,7 @@ jobs:
       - name: Install node
         uses: actions/setup-node@v7
         with:
-          node_version: '24.21.0'
+          node-version: '24.21.0'
           check_latest: false
           architecture: 'x86'
       - name: Confirm node.js
