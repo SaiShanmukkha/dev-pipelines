@@ -1,0 +1,24 @@
+name: p5
+
+on:
+  workflow_dispatch:
+
+env:
+  var1: "Some Variable 1"
+
+jobs:
+  first_job:
+    uses: "./.github/workflows/p2.yml"
+    with:
+      name: "Katherine"
+      
+  second_job:  
+    runs-on: ubuntu-22.04
+    env:
+      job_va1: "Job Var 1"
+      
+    steps:
+      - name: Global env
+        run: echo ${{ env.var1 }}
+      - name: Job Specific Variable
+        run: echo ${{env.job_va1}}
