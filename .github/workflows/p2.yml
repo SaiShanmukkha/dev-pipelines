@@ -7,6 +7,11 @@ on:
         default: "John Doe"
         required: false
         type: string
+      code:
+        description: "code input"
+        default: "matlab"
+        required: false
+        type: string
 
 run-name: ${{ github.actor }} triggered workflow in ${{ github.repository }} | ${{ inputs.name }}
 jobs:
@@ -16,3 +21,10 @@ jobs:
       - name: Print name
         run: |
           echo "Name is: ${{ inputs.name }}"
+          echo "Completed"
+          
+  print-username:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print the input name to STDOUT
+        run: echo The username is ${{ inputs.code }}
