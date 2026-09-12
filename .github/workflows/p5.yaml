@@ -13,6 +13,7 @@ jobs:
       name: "Katherine"
       
   second_job:  
+    needs: first_job
     runs-on: ubuntu-22.04
     env:
       job_va1: "Job Var 1"
