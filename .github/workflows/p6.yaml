@@ -1,0 +1,13 @@
+name: p6
+
+on: 
+  workflow_dispatch:
+
+run-name: P6 run
+
+jobs:
+  first-job:
+    runs-on: ubuntu-22.04
+    cancel-timeout-minutes: 1
+    steps:
+      - run: sleep 120
