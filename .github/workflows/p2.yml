@@ -1,0 +1,18 @@
+name: p2
+on:
+  workflow_call:
+    inputs:
+      name:
+        description: "Name need for running this workflow"
+        default: "John Doe"
+        required: false
+        type: string
+
+run-name: ${{ github.actor }} triggered workflow in ${{ github.repository }} | ${{ inputs.name }}
+jobs:
+  print-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print name
+        run: |
+          echo "Name is: ${{ inputs.name }}"
