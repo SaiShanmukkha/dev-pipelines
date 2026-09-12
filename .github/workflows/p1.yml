@@ -53,3 +53,8 @@ jobs:
           lscpu
           echo "Memory:"
           free -m
+
+  call_workflow_p2:
+    uses: "./.github/workflows/p2.yml"
+    with:
+      name: "Katherine"
