@@ -55,6 +55,9 @@ jobs:
           free -m
 
   call_workflow_p2:
+    needs:
+     - init_job
+     - first_job
     uses: "./.github/workflows/p2.yml"
     with:
       name: "Katherine"
