@@ -57,7 +57,7 @@ jobs:
   call_workflow_p2:
     needs:
      - init_job
-     - first_job
+     - github_context
     uses: "./.github/workflows/p2.yml"
     with:
       name: "Katherine"
