@@ -23,3 +23,22 @@ jobs:
         run: echo ${{ env.var1 }}
       - name: Job Specific Variable
         run: echo ${{env.job_va1}}
+
+  upload-artifat:
+    needs: second_job
+    runs-on: ubuntu-22.04
+
+    steps:
+      - run: echo 'hello world artifact text file' > hello.txt
+      - name: upload action
+        uses: actions/upload-artifact@v7
+        with:
+          include-hidden-files: false
+          name: ga_art
+          path: |
+            ./hello.txt
+  
+
+      
+            
+          
