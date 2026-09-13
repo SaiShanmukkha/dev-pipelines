@@ -25,7 +25,7 @@ jobs:
       - name: Job Specific Variable
         run: echo ${{env.job_va1}}
       - name: some output
-        run: echo "out='some data'" >> $GITHUB_OUTPUT
+        run: echo "out=john wick" >> $GITHUB_OUTPUT
         id: metadata
 
   upload-artifat:
@@ -57,7 +57,7 @@ jobs:
           ls -la
           cat ./download_path/hello.txt
           sleep 5
-          cat "Completed"
+          echo "Completed"
       
             
           
