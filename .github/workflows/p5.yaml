@@ -50,7 +50,7 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: ga_art
-          path: ./doenload_path
+          path: ./download_path
 
       - name: get contents
         run: |
