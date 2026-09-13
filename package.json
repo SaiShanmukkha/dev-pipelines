@@ -5,7 +5,10 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint .",
+    "format:check": "prettier --check ."
   },
   "repository": {
     "type": "git",
@@ -18,10 +21,14 @@
   },
   "homepage": "https://github.com/SaiShanmukkha/dev-pipelines#readme",
   "dependencies": {
-    "zod": "^4.3.6",
-    "log": "^6.3.2"
+    "log": "^6.3.2",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
-    "jest": "^30.3.0"
+    "@types/jest": "^30.0.0",
+    "eslint": "^9.0.0",
+    "jest": "^30.3.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0"
   }
 }
