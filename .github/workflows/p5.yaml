@@ -17,19 +17,23 @@ jobs:
     runs-on: ubuntu-22.04
     env:
       job_va1: "Job Var 1"
-      
+    outputs:
+      out1: ${{ steps.metadata.outputs.out }}
     steps:
       - name: Global env
         run: echo ${{ env.var1 }}
       - name: Job Specific Variable
         run: echo ${{env.job_va1}}
+      - name: some output
+        run: echo "out='some data'" >> $GITHUB_OUTPUT
+        id: metadata
 
   upload-artifat:
     needs: second_job
     runs-on: ubuntu-22.04
 
     steps:
-      - run: echo 'hello world artifact text file' > hello.txt
+      - run: echo 'hello world artifact text file and ${{ needs.second_job.outputs.out1 }}' > hello.txt
       - name: upload action
         uses: actions/upload-artifact@v7
         with:
@@ -38,7 +42,14 @@ jobs:
           path: |
             ./hello.txt
   
-
+  download-artifacts:
+    needs: upload-artifat
+    runs-on: ubuntu-latest
+    steps:
+      - name: print file contents
+        uses: actions/download-artifact@v8
+        with:
+          name: ga_art
       
             
           
