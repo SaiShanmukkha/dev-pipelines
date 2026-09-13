@@ -1,47 +1,47 @@
 name: cicd-pipeline
 on: workflow_dispatch
 jobs:
-    test-job:
-        runs-on: ubuntu-latest
-        env:
-            node-version: 24
-        steps:
-            -   name: Get Code
-                uses: actions/checkout@v3
-            -   name: Install Node.js
-                uses: actions/setup-node@v3
-                with:
-                    node-version: ${{ env.node-version}}
-            -   name: npm cache
-                uses: actions/cache@v4
-                with:
-                    path: ~/.npm
-                    key: npm-${{ runner.os }}-node-${{ env.node-version }}-${{ hashFiles('**/package-lock.json') }}
-            -   name: install dependencies
-                run: npm ci
-            -   name: run tests
-                run: npm test
-    
-    deploy-job:
-        runs-on: ubuntu-latest
-        env:
-            node-version: 24
-        needs: test-job
-        steps:
-            -   name: Deploy to production
-                run: echo "Deploying to production..."
-            -   name: Get Code
-                uses: actions/checkout@v3
-            -   name: Install Node.js
-                uses: actions/setup-node@v3
-                with:
-                    node-version: ${{ env.node-version }}
-            -   name: npm cache
-                uses: actions/cache@v4
-                with:
-                    path: ~/.npm
-                    key: npm-${{ runner.os }}-node-${{ env.node-version }}-${{ hashFiles('**/package-lock.json') }}
-            -   name: install dependencies
-                run: npm ci
-            -   name: deploy application
-                run: echo "Application deployed successfully!"
+  test-job:
+    runs-on: ubuntu-latest
+    env:
+      node_version: 24
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.node_version }}
+      - name: npm cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: npm-${{ runner.os }}-node-${{ env.node_version }}-${{ hashFiles('**/package-lock.json') }}
+      - name: install dependencies
+        run: npm ci
+      - name: run tests
+        run: npm test
+
+  deploy-job:
+    runs-on: ubuntu-latest
+    env:
+      node_version: 24
+    needs: test-job
+    steps:
+      - name: Deploy to production
+        run: echo "Deploying to production..."
+      - name: Get Code
+        uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.node_version }}
+      - name: npm cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: npm-${{ runner.os }}-node-${{ env.node_version }}-${{ hashFiles('**/package-lock.json') }}
+      - name: install dependencies
+        run: npm ci
+      - name: deploy application
+        run: echo "Application deployed successfully!"
