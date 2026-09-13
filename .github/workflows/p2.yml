@@ -22,7 +22,7 @@ jobs:
   print-name:
     runs-on: ubuntu-latest
     steps:
-      - run: sleep 120
+      - run: sleep 10
       - name: Print name
         run: |
           echo "Name is: ${{ inputs.name }}"
